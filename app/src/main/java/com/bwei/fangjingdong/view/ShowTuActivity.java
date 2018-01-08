@@ -1,13 +1,12 @@
 package com.bwei.fangjingdong.view;
 
 import android.content.Intent;
+import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.util.Log;
-import android.view.Display;
 
 import com.bwei.fangjingdong.R;
 
@@ -25,7 +24,7 @@ public class ShowTuActivity extends AppCompatActivity {
         }
     };
 
-    int i = 5;
+    int i = 3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
