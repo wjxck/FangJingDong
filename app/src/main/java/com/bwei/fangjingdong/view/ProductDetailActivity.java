@@ -9,6 +9,7 @@ import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.bwei.fangjingdong.R;
@@ -22,7 +23,7 @@ import com.bwei.fangjingdong.view.iview.IProductDetailActivity;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ProductDetailActivity extends AppCompatActivity implements IProductDetailActivity {
+public class ProductDetailActivity extends AppCompatActivity implements IProductDetailActivity, View.OnClickListener {
 
     private RecyclerView mDeRv;
     private List<ProductDetailBean.DataBean> list;
@@ -30,6 +31,11 @@ public class ProductDetailActivity extends AppCompatActivity implements IProduct
      * 添加到购物车
      */
     private Button mBtAddcart;
+    private ImageView mIvCart;
+    /**
+     * 立即购买
+     */
+    private Button mBtOrder;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,7 +58,7 @@ public class ProductDetailActivity extends AppCompatActivity implements IProduct
         //设置线性布局管理器
         mDeRv.setLayoutManager(new LinearLayoutManager(this));
         int uid = MyApp.sp.getInt("uid", 0);
-        detailPresenter.addCart(uid+"",pid);
+        detailPresenter.addCart(uid + "", pid);
 
     }
 
@@ -62,6 +68,10 @@ public class ProductDetailActivity extends AppCompatActivity implements IProduct
     private void initView() {
         mDeRv = (RecyclerView) findViewById(R.id.de_rv);
         mBtAddcart = (Button) findViewById(R.id.bt_addcart);
+        mIvCart = (ImageView) findViewById(R.id.iv_cart);
+        mIvCart.setOnClickListener(this);
+        mBtOrder = (Button) findViewById(R.id.bt_order);
+        mBtOrder.setOnClickListener(this);
     }
 
     @Override
@@ -79,7 +89,7 @@ public class ProductDetailActivity extends AppCompatActivity implements IProduct
         mBtAddcart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (code.equals("0")) {
+                if ("0".equals(code)) {
                     Toast.makeText(ProductDetailActivity.this, addCartBean.getMsg(), Toast.LENGTH_SHORT).show();
                 } else {
                     Toast.makeText(ProductDetailActivity.this, addCartBean.getMsg(), Toast.LENGTH_SHORT).show();
@@ -88,4 +98,15 @@ public class ProductDetailActivity extends AppCompatActivity implements IProduct
         });
     }
 
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.iv_cart:
+                break;
+            case R.id.bt_order:
+                Intent intent = new Intent(this, OrderActivity.class);
+                startActivity(intent);
+                break;
+        }
+    }
 }

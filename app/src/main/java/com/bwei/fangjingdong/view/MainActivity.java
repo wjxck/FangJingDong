@@ -120,7 +120,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             bai();
             my();
         }
-
     }
 
     private void my() {

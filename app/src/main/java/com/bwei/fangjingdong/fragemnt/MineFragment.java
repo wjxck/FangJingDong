@@ -21,6 +21,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -30,6 +31,7 @@ import com.bwei.fangjingdong.utils.ImageUtils;
 import com.bwei.fangjingdong.utils.MyApp;
 import com.bwei.fangjingdong.view.LoginActivity;
 import com.bwei.fangjingdong.view.MyActivity;
+import com.bwei.fangjingdong.view.OrderActivity;
 import com.facebook.drawee.view.SimpleDraweeView;
 
 import java.io.File;
@@ -64,6 +66,7 @@ public class MineFragment extends Fragment implements View.OnClickListener {
     protected static final int TAKE_PICTURE = 1;
     private static final int CROP_SMALL_PICTURE = 2;
     protected static Uri tempUri;
+    private LinearLayout mLinearOrder;
 
     @Nullable
     @Override
@@ -81,6 +84,8 @@ public class MineFragment extends Fragment implements View.OnClickListener {
         mMyImg = (ImageView) view.findViewById(R.id.my_img);
         mMyXimg = (SimpleDraweeView) view.findViewById(R.id.my_ximg);
         mMyNickname = (TextView) view.findViewById(R.id.my_nickname);
+        mLinearOrder = (LinearLayout) view.findViewById(R.id.linear_order);
+        mLinearOrder.setOnClickListener(this);
     }
 
 
@@ -91,6 +96,10 @@ public class MineFragment extends Fragment implements View.OnClickListener {
                 Intent intent = new Intent(getActivity(), LoginActivity.class);
                 startActivity(intent);
                 break;
+            case R.id.linear_order:
+                Intent intent1 = new Intent(getActivity(), OrderActivity.class);
+                startActivity(intent1);
+                break;
         }
     }
 
@@ -100,7 +109,7 @@ public class MineFragment extends Fragment implements View.OnClickListener {
             Random random = new Random();
             int i = random.nextInt(100);
             nickname = MyApp.sp.getString("name", "");
-            mMyNickname.setText("ZZ_" + i);
+            mMyNickname.setText("WJX" + i);
             mMyXimg.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {

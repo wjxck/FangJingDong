@@ -23,4 +23,5 @@ public class API {
     public static final String PRODUCTDETAIL = "product/getProductDetail?source=android";//商品详情
     public static final String GETCARTS = "product/getCarts?source=android";//查询购物车
     public static final String ADDCART = "product/addCart?source=android";//添加购物车
+    public static final String GETORGERS = "product/getOrders";//订单列表
 }

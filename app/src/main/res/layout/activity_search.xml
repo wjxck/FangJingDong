@@ -14,8 +14,8 @@
 
         <ImageView
             android:id="@+id/backs"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
+            android:layout_width="10dp"
+            android:layout_height="40dp"
             android:layout_weight="1"
             android:background="@drawable/leftjiantou" />
 
@@ -27,8 +27,8 @@
 
         <ImageView
             android:id="@+id/grid"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
+            android:layout_width="20dp"
+            android:layout_height="40dp"
             android:layout_weight="1"
             android:background="@drawable/kind_liner" />
     </LinearLayout>

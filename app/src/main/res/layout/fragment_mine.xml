@@ -184,6 +184,7 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/linear_order"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"

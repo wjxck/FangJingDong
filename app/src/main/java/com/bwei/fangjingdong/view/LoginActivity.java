@@ -29,8 +29,8 @@ import org.json.JSONObject;
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener, ILoginActivity {
 
-    private ImageView mLoginBack;
-    /**
+     private ImageView mLoginBack;
+     /**
      * 手机号
      */
     private EditText mEtPhone;
@@ -60,6 +60,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     private Tencent mTencent;
     private BaseUiListener mIUiListener;
     private UserInfo mUserInfo;
+    private String loginBeanCode;
 
 
     @Override
@@ -143,6 +144,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     public void showLogin(LoginBean loginBean, String code, String msg) {
         codes = code;
         msgs = msg;
+        loginBeanCode = loginBean.getCode();
         if (codes.equals("0")) {
             Toast.makeText(this, msgs, Toast.LENGTH_SHORT).show();
             LoginBean.DataBean data = loginBean.getData();

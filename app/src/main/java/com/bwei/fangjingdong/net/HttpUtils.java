@@ -5,6 +5,7 @@ import com.bwei.fangjingdong.bean.CartBean;
 import com.bwei.fangjingdong.bean.CatagoryBean;
 import com.bwei.fangjingdong.bean.HomeAdBean;
 import com.bwei.fangjingdong.bean.LoginBean;
+import com.bwei.fangjingdong.bean.OrderBean;
 import com.bwei.fangjingdong.bean.ProductCatagoryBean;
 import com.bwei.fangjingdong.bean.ProductDetailBean;
 import com.bwei.fangjingdong.bean.RegisterBean;
@@ -66,4 +67,8 @@ public interface HttpUtils {
     //查询购物车
     @GET(API.GETCARTS)
     Observable<CartBean> getGoods(@Query("uid") String uid, @Query("token") String token);
+
+    //订单列表
+    @GET(API.GETORGERS)
+    Observable<OrderBean> getOrder(@Query("uid") String uid);
 }
