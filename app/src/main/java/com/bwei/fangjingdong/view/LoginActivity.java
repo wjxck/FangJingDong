@@ -55,7 +55,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     String msgs;
 
 
-    private static final String TAG = "MainActivity";
+    private static final String TAG = "LoginActivity";
     private static final String APP_ID = "1105602574";//官方获取的APPID
     private Tencent mTencent;
     private BaseUiListener mIUiListener;

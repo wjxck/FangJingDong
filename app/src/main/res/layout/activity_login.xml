@@ -68,7 +68,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:hint="请输入密码" />
+            android:hint="请输入密码"
+            android:password="true" />
 
         <ImageView
             android:id="@+id/img_pwd"
@@ -96,23 +97,35 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_marginTop="200dp">
+
+        <TextView
+            android:id="@+id/tv_login_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:text="---------------第三方登录---------------"
+            android:textSize="20dp" />
 
         <ImageView
             android:id="@+id/img_weixin"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_margin="30dp"
+            android:layout_below="@id/tv_login_title"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="10dp"
             android:background="@drawable/weixin" />
 
         <ImageView
             android:id="@+id/img_mqq"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
             android:layout_alignParentRight="true"
+            android:layout_below="@id/tv_login_title"
             android:layout_marginRight="30dp"
+            android:layout_marginTop="10dp"
             android:background="@drawable/mqq" />
     </RelativeLayout>
 

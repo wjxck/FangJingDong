@@ -18,6 +18,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 import android.widget.ViewFlipper;
 
 import com.bwei.fangjingdong.R;
@@ -153,16 +154,19 @@ public class HomeFragment extends Fragment implements IShoYeView, View.OnClickLi
                         .scanningQRCode(new OnQRCodeScanCallback() {
                             @Override
                             public void onCompleted(String result) {//扫描成功之后回调，result就是扫描的结果
+                                Toast.makeText(getContext(), result, Toast.LENGTH_SHORT).show();
                                 Log.i("AA", result);
                             }
 
                             @Override
                             public void onError(Throwable errorMsg) {//扫描出错的时候回调
+                                Toast.makeText(getContext(), "\n\n(错误)" + errorMsg.toString(), Toast.LENGTH_SHORT).show();
                                 // controlLog.append("\n\n(错误)" + errorMsg.toString());
                             }
 
                             @Override
                             public void onCancel() {//取消扫描的时候回调
+                                Toast.makeText(getContext(), "\n\n(取消)扫描任务取消了", Toast.LENGTH_SHORT).show();
                                 //controlLog.append("\n\n(取消)扫描任务取消了");
                             }
                         });
@@ -241,6 +245,7 @@ public class HomeFragment extends Fragment implements IShoYeView, View.OnClickLi
         LinearLayoutManager layoutManager = new LinearLayoutManager(getActivity());
         // 设置 recyclerview 布局方式为横向布局
         layoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
+
         //给RecyClerView 添加设置好的布局样式
         mHdRlvs.setLayoutManager(layoutManager);
 
